@@ -41,20 +41,16 @@ def get_db_connection():
 @st.cache_data(ttl=600)
 def load_data(ticker=None, days=7):
     conn = get_db_connection()
-    if not conn:
-        return pd.DataFrame()
-    
+    if not conn: return pd.DataFrame()
     try:
-        # Query lấy tin tức và điểm AI
+        # BỎ source_name vì Database của Nam chưa có cột này
         query = f"""
-            SELECT published_at, title, sentiment_label, sentiment_score, source_name, url 
+            SELECT published_at, title, sentiment_label, sentiment_score, url 
             FROM public.news_articles 
             WHERE published_at >= NOW() - INTERVAL '{days} days'
         """
-        # Nếu có chọn mã chứng khoán thì lọc theo mã đó
         if ticker:
             query += f" AND (title ILIKE '%{ticker}%')"
-            
         query += " ORDER BY published_at DESC"
         
         df = pd.read_sql(query, conn)
@@ -68,16 +64,16 @@ def load_data(ticker=None, days=7):
 @st.cache_data(ttl=300)
 def load_correlation_data():
     conn = get_db_connection()
-    if not conn:
-        return pd.DataFrame()
-    
+    if not conn: return pd.DataFrame()
     try:
-        # Cột "Date" và "Ticker" phải viết hoa chữ cái đầu theo dữ liệu của Nam
-        query = 'SELECT "Date", "Ticker", "Close", "Sentiment_Score" FROM public.market_correlation ORDER BY "Date" ASC'
+        # Đổi "Date" thành "date", "Ticker" thành "ticker"... theo gợi ý của Postgres
+        query = 'SELECT "date", "ticker", "close", "sentiment_score" FROM public.market_correlation ORDER BY "date" ASC'
         df = pd.read_sql(query, conn)
         conn.close()
         
-        if not df.empty and 'Date' in df.columns:
+        # Đổi tên cột trong DataFrame để khớp với code Dashboard của Nam
+        if not df.empty:
+            df.columns = ['Date', 'Ticker', 'Close', 'Sentiment_Score']
             df['Date'] = pd.to_datetime(df['Date'])
         return df
     except Exception as e:
