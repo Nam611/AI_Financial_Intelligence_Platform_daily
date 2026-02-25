@@ -1,11 +1,24 @@
 import streamlit as st
-from config.theme import apply_theme
-# Import các hàm load dữ liệu
-from services.database import load_data, load_correlation_data
-from components.sidebar import show_sidebar
-from components.metrics import show_metrics
-from components.charts import show_charts, show_correlation_chart 
-from components.news_feed import show_news_feed
+import sys
+import os
+
+# 1. Ép Python nhìn vào thư mục gốc của dự án
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# 2. Bây giờ mới thực hiện Import (Dùng import trực tiếp từ file)
+try:
+    from services.database import load_data, load_correlation_data
+    from components.sidebar import show_sidebar
+    from components.metrics import show_metrics
+    from components.charts import show_charts, show_correlation_chart 
+    from components.news_feed import show_news_feed
+except ImportError:
+    # Nếu vẫn lỗi, thử import trực tiếp không qua thư mục 'services'
+    from database import load_data, load_correlation_data
+    from sidebar import show_sidebar
+    from metrics import show_metrics
+    from charts import show_charts, show_correlation_chart 
+    from news_feed import show_news_feed
 
 # 1. Cấu hình trang
 st.set_page_config(
