@@ -45,32 +45,37 @@ def load_correlation_data():
     conn = get_db_connection()
     if not conn: return pd.DataFrame()
     try:
-        # TUYỆT CHIÊU: Lấy tất cả, không cần gọi đích danh tên cột để tránh lỗi hoa/thường
         query = "SELECT * FROM public.market_correlation"
         df = pd.read_sql(query, conn)
         conn.close()
         
-        if not df.empty:
-            # 1. Chuyển toàn bộ tên cột thực tế trong DB về chữ thường hết
-            df.columns = df.columns.str.lower()
+        if df.empty: return df
+        
+        # 1. Lưu lại danh sách tên cột gốc để báo cáo nếu thiếu
+        raw_columns = df.columns.tolist()
+        
+        # 2. Chuyển hết về chữ thường và đổi tên
+        df.columns = df.columns.str.lower()
+        df.rename(columns={
+            'ticker': 'Ticker', 
+            'close': 'Close', 
+            'sentiment_score': 'Sentiment_Score', 
+            'date': 'Date'
+        }, inplace=True)
+        
+        # 3. KIỂM TRA THÔNG MINH: Nếu không có cột Close thì báo lỗi rõ ràng ra màn hình
+        if 'Close' not in df.columns:
+            st.warning(f"⚠️ Dữ liệu Correlation bị thiếu cột giá đóng cửa. Các cột hiện có trên Neon DB là: {raw_columns}")
+            # Trả về DF rỗng tạm thời để Web không bị sập (Crash)
+            return pd.DataFrame()
             
-            # 2. Đổi tên lại cho khớp chính xác với code Dashboard của Nam
-            df.rename(columns={
-                'ticker': 'Ticker', 
-                'close': 'Close', 
-                'sentiment_score': 'Sentiment_Score', 
-                'date': 'Date'
-            }, inplace=True)
-            
-            # 3. Ép kiểu dữ liệu để không bao giờ bị lỗi TypeError
-            df['Date'] = pd.to_datetime(df['Date'])
-            df['Close'] = pd.to_numeric(df['Close'], errors='coerce')
-            df['Sentiment_Score'] = pd.to_numeric(df['Sentiment_Score'], errors='coerce')
-            
-            # 4. Sắp xếp lại theo thời gian
-            df = df.sort_values('Date', ascending=True)
-            
-        return df
+        # 4. Nếu có đủ cột, tiến hành ép kiểu như bình thường
+        df['Date'] = pd.to_datetime(df['Date'])
+        df['Close'] = pd.to_numeric(df['Close'], errors='coerce')
+        df['Sentiment_Score'] = pd.to_numeric(df['Sentiment_Score'], errors='coerce')
+        
+        return df.sort_values('Date', ascending=True)
+        
     except Exception as e:
         st.error(f"❌ Lỗi truy vấn Correlation: {e}")
         return pd.DataFrame()
