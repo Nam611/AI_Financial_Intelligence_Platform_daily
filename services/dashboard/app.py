@@ -1,10 +1,9 @@
 import streamlit as st
 from config.theme import apply_theme
 # Import các hàm load dữ liệu
-from services.database import load_data, load_correlation_data 
+from services.database import load_data, load_correlation_data
 from components.sidebar import show_sidebar
 from components.metrics import show_metrics
-# Import các hàm vẽ biểu đồ
 from components.charts import show_charts, show_correlation_chart 
 from components.news_feed import show_news_feed
 
