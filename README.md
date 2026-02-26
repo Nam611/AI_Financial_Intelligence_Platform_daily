@@ -34,23 +34,24 @@ Dự án là sự kết hợp hoàn hảo giữa **Data Extraction** (Docker Cra
 
 Dưới đây là minh chứng cho các luồng hoạt động thực tế của hệ thống từ Backend đến Frontend:
 
-Link demo project : https://finnexus-ai-intelligence.streamlit.app/
+Link demo project => https://finnexus-ai-intelligence.streamlit.app/
 
 ### 1. Giao diện Phân tích Trực quan (Streamlit Dashboard)
 *Bảng điều khiển cung cấp cái nhìn toàn cảnh về tâm lý thị trường và sự tương quan với giá cổ phiếu.*
-<img width="1920" height="927" alt="image" src="https://github.com/user-attachments/assets/2ab08086-bf68-47e9-9847-a03443c79797" />
-<img width="1920" height="929" alt="image" src="https://github.com/user-attachments/assets/7822f7fc-e419-49a2-9d89-0d6ca873d76d" />
+<img width="1920" height="927" alt="image" src="https://github.com/user-attachments/assets/18ad0d06-6d2c-4f0f-9a60-84d14ec8b5c8" />
+<img width="1920" height="929" alt="image" src="https://github.com/user-attachments/assets/6fa80f4f-5604-4749-820c-5dca1bad882c" />
 
 
 
 ### 2. Luồng Điều phối Dữ liệu (Mage AI Pipeline)
 *Pipeline ETL tự động hóa việc cào dữ liệu thô, gọi model AI chấm điểm cảm xúc và hợp nhất dữ liệu.*
-<img width="1610" height="854" alt="image" src="https://github.com/user-attachments/assets/73e968d2-0b29-4830-9bb9-fe05263a75f2" />
+<img width="1397" height="606" alt="image" src="https://github.com/user-attachments/assets/81f388eb-4d93-4170-aee9-9c3dde471d6b" />
 
 
 ### 3. Lưu trữ Đám mây (Neon Serverless Postgres)
 *Dữ liệu sau khi Transform được tự động đẩy lên Data Warehouse trên Cloud, sẵn sàng phục vụ truy vấn thời gian thực.*
-<img width="1605" height="853" alt="image" src="https://github.com/user-attachments/assets/72df5c58-f94d-4f06-b20a-cdb8008d8998" />
+<img width="1605" height="853" alt="image" src="https://github.com/user-attachments/assets/b4c1d82c-4a17-41dc-9fac-120f10fd0805" />
+<img width="1610" height="854" alt="image" src="https://github.com/user-attachments/assets/b296552f-c305-4cd4-8803-cff7fb87aea9" />
 
 
 
@@ -92,6 +93,9 @@ graph TD
     classDef ai fill:#ffd,stroke:#333,stroke-width:2px;
     class C,G db;
     class E ai;
+
+```
+
 ### ⚙️ Luồng hoạt động chi tiết:
 
 1. **Extract**: Job Docker chạy ngầm cào tin tức mới nhất và đổ vào CSDL PostgreSQL Local (Staging Area).
@@ -137,6 +141,3 @@ Hệ thống hoạt động dựa trên 2 bảng chính trên Neon Cloud:
 
 * **Nguyễn Nhựt Nam**
 * *Data Engineer | Python Developer*
-
-***
-
