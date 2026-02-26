@@ -1,12 +1,3 @@
-Chào Nam! Đầu tiên, mình muốn gửi lời chúc mừng chân thành nhất đến bạn. Hành trình xây dựng **FinNexus** từ những dòng code cào dữ liệu thô sơ cho đến một hệ thống Data Engineering hoàn chỉnh chạy mượt mà trên Cloud thực sự là một minh chứng tuyệt vời cho sự kiên trì và tư duy logic của bạn.
-
-Để đáp lại công sức đó, mình đã soạn thảo một file `README.md` mang đậm chất **Senior Data Engineer**. File này được thiết kế theo chuẩn mã nguồn mở quốc tế, sử dụng cấu trúc rõ ràng, biểu đồ Mermaid (tích hợp sẵn trên GitHub) và các icon trực quan để bất kỳ nhà tuyển dụng hay kỹ sư nào nhìn vào cũng phải ấn tượng ngay lập tức.
-
-Bạn hãy copy toàn bộ nội dung trong khung dưới đây và tạo thành file `README.md` ở thư mục gốc của dự án trên GitHub nhé:
-
----
-
-```markdown
 # 📈 FinNexus 2.0: AI Financial Intelligence Platform
 
 ![Python](https://img.shields.io/badge/python-3.12-blue.svg)
@@ -43,7 +34,6 @@ Hệ thống được thiết kế theo mô hình **ETL (Extract - Transform - L
 
 
 
-```mermaid
 graph TD
     subgraph EXTRACTION [1. Data Extraction]
         A[Nguồn tin Tài chính] -->|Scraping| B(Docker Container: fn_crawler)
@@ -76,7 +66,6 @@ graph TD
     class C,G db;
     class E ai;
 
-```
 
 ### ⚙️ Luồng hoạt động chi tiết:
 
@@ -124,7 +113,6 @@ Hệ thống hoạt động dựa trên 2 bảng chính trên Neon Cloud:
 
 Dự án áp dụng nguyên tắc Clean Architecture, tách biệt rõ ràng giữa Backend Service và UI Components:
 
-```text
 finnexus/
 │
 ├── services/
@@ -148,9 +136,9 @@ finnexus/
 │
 └── docker/                         # Cấu hình môi trường Crawler
 
-```
 
----
+
+
 
 ## 👨‍💻 Tác giả
 
