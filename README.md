@@ -1,3 +1,8 @@
+Dưới đây là bản dịch sang tiếng Anh chuyên nghiệp (Professional English), sử dụng đúng các thuật ngữ chuyên ngành Data Engineering và Software Engineering để làm nổi bật dự án của bạn trong mắt các nhà tuyển dụng quốc tế:
+
+---
+
+```markdown
 # 📈 FinNexus 2.0: AI Financial Intelligence Platform
 
 ![Python](https://img.shields.io/badge/python-3.12-blue.svg)
@@ -6,65 +11,60 @@
 ![Mage AI](https://img.shields.io/badge/Mage_AI-Data_Pipeline-8A2BE2)
 ![PostgreSQL](https://img.shields.io/badge/Neon_Cloud-PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
 
-🎯 **Trải nghiệm Hệ thống Trực tiếp (Live Demo):** [FinNexus AI Intelligence Dashboard](https://finnexus-ai-intelligence.streamlit.app/)
+🎯 **Live Demo:** [FinNexus AI Intelligence Dashboard](https://finnexus-ai-intelligence.streamlit.app/)
 
-**FinNexus 2.0** là một hệ thống Data Engineering toàn diện (End-to-End), được thiết kế với kiến trúc Clean Architecture. Hệ thống tự động hóa việc thu thập tin tức tài chính, phân tích tâm lý thị trường (Sentiment Analysis) bằng AI, và tìm ra mối tương quan với biến động giá cổ phiếu (Multi-Ticker) theo thời gian thực.
-
----
-
-## 📑 Mục lục
-- [Giới thiệu Dự án](#-giới-thiệu-dự-án)
-- [Hệ thống Thực tế (System Showcase)](#-hệ-thống-thực-tế-system-showcase)
-- [Kiến trúc Hệ thống (System Architecture)](#-kiến-trúc-hệ-thống-system-architecture)
-- [Các Tính năng Cốt lõi](#-các-tính-năng-cốt-lõi)
-- [Công nghệ Sử dụng (Tech Stack)](#-công-nghệ-sử-dụng-tech-stack)
-- [Cấu trúc Dữ liệu (Database Schema)](#-cấu-trúc-dữ-liệu-database-schema)
-- [Tác giả](#-tác-giả)
+**FinNexus 2.0** is a comprehensive End-to-End Data Engineering platform built upon Clean Architecture principles. The system automates financial news ingestion, leverages AI for Market Sentiment Analysis, and discovers real-time correlations with stock price fluctuations across multiple tickers.
 
 ---
 
-## 🚀 Giới thiệu Dự án
-Trong kỷ nguyên thông tin, biến động của thị trường chứng khoán chịu ảnh hưởng mạnh mẽ bởi tin tức. **FinNexus** ra đời nhằm giải quyết bài toán: *Làm thế nào để lượng hóa tâm lý thị trường từ hàng ngàn bài báo tài chính mỗi ngày và đối chiếu nó với giá cổ phiếu một cách hoàn toàn tự động?*
-
-Dự án là sự kết hợp hoàn hảo giữa **Data Extraction** (Docker Crawler), **Data Orchestration & Transformation** (Mage AI + NLP DistilBERT), **Cloud Data Warehousing** (Neon Postgres), và **Data Visualization** (Streamlit).
+## 📑 Table of Contents
+- [Project Overview](#-project-overview)
+- [System Showcase](#-system-showcase)
+- [System Architecture](#-system-architecture)
+- [Core Features](#-core-features)
+- [Tech Stack](#-tech-stack)
+- [Database Schema](#-database-schema)
+- [Author](#-author)
 
 ---
 
-## 📸 Hệ thống Thực tế (System Showcase)
+## 🚀 Project Overview
+In today's information-driven era, stock market volatility is heavily impacted by financial news. **FinNexus** was developed to address a critical question: *How can we automatically quantify market sentiment from thousands of daily financial articles and correlate it with stock prices?*
 
-Dưới đây là minh chứng cho các luồng hoạt động thực tế của hệ thống từ Backend đến Frontend:
+This project seamlessly integrates **Data Extraction** (Docker Crawler), **Data Orchestration & Transformation** (Mage AI + NLP DistilBERT), **Cloud Data Warehousing** (Neon Serverless Postgres), and **Data Visualization** (Streamlit).
 
-Link demo project => https://finnexus-ai-intelligence.streamlit.app/
+---
 
-### 1. Giao diện Phân tích Trực quan (Streamlit Dashboard)
-*Bảng điều khiển cung cấp cái nhìn toàn cảnh về tâm lý thị trường và sự tương quan với giá cổ phiếu.*
+## 📸 System Showcase
+
+Below are demonstrations of the system's actual workflows, from Backend to Frontend:
+
+**Live Demo Project:** https://finnexus-ai-intelligence.streamlit.app/
+
+### 1. Visual Analytics Interface (Streamlit Dashboard)
+*The interactive dashboard provides a comprehensive overview of market sentiment and its correlation with stock prices.*
 <img width="1920" height="927" alt="image" src="https://github.com/user-attachments/assets/18ad0d06-6d2c-4f0f-9a60-84d14ec8b5c8" />
 <img width="1920" height="929" alt="image" src="https://github.com/user-attachments/assets/6fa80f4f-5604-4749-820c-5dca1bad882c" />
 
-
-
-### 2. Luồng Điều phối Dữ liệu (Mage AI Pipeline)
-*Pipeline ETL tự động hóa việc cào dữ liệu thô, gọi model AI chấm điểm cảm xúc và hợp nhất dữ liệu.*
+### 2. Data Orchestration Flow (Mage AI Pipeline)
+*The ETL pipeline automates raw data scraping, triggers the AI model for sentiment scoring, and merges the datasets.*
 <img width="1397" height="606" alt="image" src="https://github.com/user-attachments/assets/81f388eb-4d93-4170-aee9-9c3dde471d6b" />
 
-
-### 3. Lưu trữ Đám mây (Neon Serverless Postgres)
-*Dữ liệu sau khi Transform được tự động đẩy lên Data Warehouse trên Cloud, sẵn sàng phục vụ truy vấn thời gian thực.*
+### 3. Cloud Storage (Neon Serverless Postgres)
+*Transformed data is automatically loaded into the Cloud Data Warehouse, ready for real-time querying.*
 <img width="1605" height="853" alt="image" src="https://github.com/user-attachments/assets/b4c1d82c-4a17-41dc-9fac-120f10fd0805" />
 <img width="1610" height="854" alt="image" src="https://github.com/user-attachments/assets/b296552f-c305-4cd4-8803-cff7fb87aea9" />
 
-
-
 ---
 
-## 🗺️ Kiến trúc Hệ thống (System Architecture)
+## 🗺️ System Architecture
 
-Hệ thống được thiết kế theo mô hình **ETL (Extract - Transform - Load)** chuẩn doanh nghiệp, chia tách rõ ràng môi trường Staging (Local) và Production (Cloud) để tối ưu hóa hiệu suất và tính toàn vẹn của dữ liệu.
+The system is designed following the enterprise-standard **ETL (Extract - Transform - Load)** model, strictly separating Staging (Local) and Production (Cloud) environments to optimize performance and ensure data integrity.
 
 ```mermaid
 graph TD
     subgraph EXTRACTION [1. Data Extraction]
-        A[Nguồn tin Tài chính] -->|Scraping| B(Docker Container: fn_crawler)
+        A[Financial News Sources] -->|Scraping| B(Docker Container: fn_crawler)
     end
 
     subgraph STAGING [2. Local Staging]
@@ -96,48 +96,48 @@ graph TD
 
 ```
 
-### ⚙️ Luồng hoạt động chi tiết:
+### ⚙️ Detailed Workflow:
 
-1. **Extract**: Job Docker chạy ngầm cào tin tức mới nhất và đổ vào CSDL PostgreSQL Local (Staging Area).
-2. **Transform**: Mage AI được trigger, kéo dữ liệu thô lên. Bài báo được đưa qua mô hình AI (DistilBERT) để đọc hiểu và gán nhãn (POSITIVE, NEGATIVE, NEUTRAL) kèm điểm số.
-3. **Merge**: Dữ liệu tâm lý (Sentiment) được gộp với dữ liệu giá cổ phiếu lịch sử (VN-Index, FPT, HPG, SSI...).
-4. **Load**: Dữ liệu thành phẩm được đẩy lên Data Warehouse (Neon Cloud Postgres) thông qua SQLAlchemy.
-5. **Visualize**: Streamlit Dashboard tự động render biểu đồ dựa trên dữ liệu Cloud mới nhất với cơ chế xử lý lỗi (Fault-Tolerant) mạnh mẽ.
-
----
-
-## ✨ Các Tính năng Cốt lõi
-
-* **Automated Data Ingestion:** Hệ thống Crawler chạy độc lập trong Docker Container, đảm bảo khả năng mở rộng.
-* **AI-Powered Sentiment Analysis:** Tích hợp mô hình NLP tiên tiến để biến dữ liệu văn bản phi cấu trúc thành chỉ số định lượng.
-* **Multi-Ticker Correlation:** Phân tích tương quan song song giữa điểm tâm lý và biến động giá của nhiều mã cổ phiếu.
-* **Fault-Tolerant Dashboard:** Frontend "chống đạn" với cơ chế bọc lỗi `try-except`, tự làm sạch `NaN` và mapping Schema thông minh (vd: `stock_price` -> `Close`).
+1. **Extract**: A background Docker job scrapes the latest news and ingests it into a Local PostgreSQL database (Staging Area).
+2. **Transform**: Mage AI is triggered to extract the raw data. Unprocessed articles are passed through an AI model (DistilBERT) for Natural Language Processing, assigning sentiment labels (POSITIVE, NEGATIVE, NEUTRAL) and scores (-1.0 to 1.0).
+3. **Merge**: Sentiment data is aggregated and merged with historical stock prices (VN-Index, FPT, HPG, SSI...).
+4. **Load**: The finalized dataset is loaded directly into the Cloud Data Warehouse (Neon Serverless Postgres) via SQLAlchemy.
+5. **Visualize**: The Streamlit Dashboard dynamically renders charts based on the latest cloud data, featuring a robust, fault-tolerant mechanism.
 
 ---
 
-## 🛠️ Công nghệ Sử dụng (Tech Stack)
+## ✨ Core Features
 
-| Layer | Công nghệ | Mục đích |
+* **Automated Data Ingestion:** An independent Crawler running within a Docker container, ensuring high scalability and environment isolation.
+* **AI-Powered Sentiment Analysis:** Integrates state-of-the-art NLP models to convert unstructured text data into quantifiable metrics.
+* **Multi-Ticker Correlation:** Parallel correlation analysis between news sentiment and price fluctuations across multiple stock tickers.
+* **Fault-Tolerant Dashboard:** A "bulletproof" frontend equipped with `try-except` wrappers, automated `NaN` cleaning, and smart schema mapping (e.g., `stock_price` -> `Close`).
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Purpose |
 | --- | --- | --- |
-| **Data Extraction** | Python, Docker | Xây dựng và cô lập môi trường Crawler |
-| **Orchestration** | Mage AI | Xây dựng và quản lý luồng ETL Pipeline (DAGs) |
-| **AI / NLP** | HuggingFace, Transformers | Chấm điểm cảm xúc bài báo |
-| **Data Storage** | PostgreSQL, Neon Cloud | Lưu trữ Staging (Local) và Data Warehouse (Cloud) |
-| **Data Processing** | Pandas, SQLAlchemy | Làm sạch, ép kiểu và thao tác dữ liệu cấu trúc |
-| **Frontend / BI** | Streamlit, Altair, Plotly | Xây dựng Dashboard tương tác trực quan |
+| **Data Extraction** | Python, Docker | Build and isolate the crawler environment |
+| **Orchestration** | Mage AI | Build and manage ETL pipelines (DAGs) |
+| **AI / NLP** | HuggingFace, Transformers | Calculate article sentiment scores |
+| **Data Storage** | PostgreSQL, Neon Cloud | Staging (Local) and Data Warehousing (Cloud) |
+| **Data Processing** | Pandas, SQLAlchemy | Data cleaning, type casting, and structured data manipulation |
+| **Frontend / BI** | Streamlit, Altair, Plotly | Build interactive visual dashboards |
 
 ---
 
-## 🗄️ Cấu trúc Dữ liệu (Database Schema)
+## 🗄️ Database Schema
 
-Hệ thống hoạt động dựa trên 2 bảng chính trên Neon Cloud:
+The system operates based on 2 main tables on Neon Cloud:
 
-1. **`news_articles`**: `[published_at, title, url, sentiment_label, sentiment_score]` - Lưu trữ tin tức đã qua xử lý AI.
-2. **`market_correlation`**: `[date, ticker, close, sentiment_score]` - Dữ liệu đã gộp giữa giá cổ phiếu đóng cửa và điểm tâm lý trung bình.
+1. **`news_articles`**: `[published_at, title, url, sentiment_label, sentiment_score]` - Stores AI-processed news articles.
+2. **`market_correlation`**: `[date, ticker, close, sentiment_score]` - Merged dataset of closing stock prices and average daily sentiment scores.
 
 ---
 
-## 👨‍💻 Tác giả
+## 👨‍💻 Author
 
-* **Nguyễn Nhựt Nam**
+* **Nguyen Nhut Nam**
 * *Data Engineer | Python Developer*
