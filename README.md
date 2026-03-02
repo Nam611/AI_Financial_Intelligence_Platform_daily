@@ -136,3 +136,7 @@ The system operates based on 2 main tables on Neon Cloud:
 
 * **Nguyen Nhut Nam**
 * *Data Engineer | Python Developer*
+---
+
+## 📄 Report (Technical Report)
+👉 **[Read Technical Report ](docs/TECHNICAL_REPORT.md)**
